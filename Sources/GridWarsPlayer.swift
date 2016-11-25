@@ -1,5 +1,5 @@
 class GridWarsPlayer {
-    func play() -> Int {
-        return 1
+    func play() -> Array<Int> {
+        return [1, 1, 1]
     }
 }

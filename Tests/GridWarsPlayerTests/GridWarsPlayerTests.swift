@@ -4,7 +4,7 @@ import XCTest
 class GridWarsPlayerTests: XCTestCase {
   func testSimple() {
     let player = GridWarsPlayer()
-    XCTAssertEqual(player.play(), 1)
+    XCTAssertEqual(player.play(), [1, 1, 1])
   }
 }
 
