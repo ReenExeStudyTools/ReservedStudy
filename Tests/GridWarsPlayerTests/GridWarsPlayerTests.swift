@@ -4,7 +4,15 @@ import XCTest
 class GridWarsPlayerTests: XCTestCase {
   func testSimple() {
     let player = GridWarsPlayer()
-    XCTAssertEqual(player.play(), [1, 1, 1])
+    XCTAssertEqual(
+      player.play(
+        matrix: [
+          0, 0, 0,
+          0, 0, 0,
+          0, 0, 0,
+        ]),
+        [1, 1, 1, 1 << 31]
+    )
   }
 }
 
