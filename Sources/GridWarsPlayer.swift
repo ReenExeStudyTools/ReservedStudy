@@ -22,6 +22,10 @@ class GridWarsPlayer {
             }
         }
 
-        return [1, 1, 1, current]
+        if freeMatrix.count == 8 {
+            return [2, 2, 2, current]
+        }
+
+        return [8, 8, 8, current]
     }
 }

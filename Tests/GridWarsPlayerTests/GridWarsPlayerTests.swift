@@ -3,6 +3,7 @@ import XCTest
 
 class GridWarsPlayerTests: XCTestCase {
   func testSimple() {
+    let current = 1 << 31;
     let player = GridWarsPlayer()
     XCTAssertEqual(
       player.play(
@@ -11,7 +12,17 @@ class GridWarsPlayerTests: XCTestCase {
           0, 0, 0,
           0, 0, 0,
         ]),
-        [1, 1, 1, 1 << 31]
+        [2, 2, 2, current]
+    )
+
+    XCTAssertEqual(
+      player.play(
+        matrix: [
+          0, 0, current,
+          0, 0, 0,
+          0, 0, 0,
+        ]),
+        [8, 8, 8, current]
     )
   }
 }
