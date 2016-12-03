@@ -10,7 +10,7 @@ class GridWarsPlayer {
 
         var freeMatrix:[Int] = [];
         var selfMatrix:[Int] = [];
-        var partnerMatrix:[Int] = [];
+        var enemyMatrix:[Int] = [];
 
         for element in indexes {
             if matrix[element] == 0 {
@@ -18,12 +18,14 @@ class GridWarsPlayer {
             } else if matrix[element] == current {
                 selfMatrix.append(element)
             } else {
-                partnerMatrix.append(element)
+                enemyMatrix.append(element)
             }
         }
 
-        if freeMatrix.count == 8 {
-            return [2, 2, 2, current]
+        if enemyMatrix.isEmpty {
+            if freeMatrix.count == 8 {
+                return [2, 2, 2, current]
+            }
         }
 
         return [8, 8, 8, current]
