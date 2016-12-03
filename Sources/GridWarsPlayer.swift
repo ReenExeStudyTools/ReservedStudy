@@ -1,13 +1,12 @@
 class GridWarsPlayer {
+    private let current = 1 << 31;
+    private let indexes = [
+            0,      1,          2,
+            3,      /* self */  5,
+            6,      7,          8,
+    ];
+
     func play(matrix: [Int]) -> Array<Int> {
-        let current = 1 << 31;
-
-        let indexes = [
-                0,      1,          2,
-                3,      /* self */  5,
-                6,      7,          8,
-        ];
-
         var freeMatrix  = [Int]();
         var selfMatrix  = [Int]();
         var enemyMatrix = [Int]();
