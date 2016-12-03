@@ -49,7 +49,7 @@ class GridWarsPlayer {
             }
         }
 
-        return [8, scout]
+        return [1, scout | 1 << 28]
     }
 
     private func isFriend(_ point: Int) -> Bool {
