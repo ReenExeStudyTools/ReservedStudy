@@ -18,7 +18,7 @@ class GridWarsPlayer {
             3: 5,
     ];
 
-    func play(matrix: [Int]) -> Array<Int> {
+    func play(_ matrix: [Int]) -> Array<Int> {
         var freeMatrix  = [Int]();
         var selfMatrix  = [Int]();
         var enemyMatrix = [Int]();
@@ -26,7 +26,7 @@ class GridWarsPlayer {
         for element in indexes {
             if matrix[element] == 0 {
                 freeMatrix.append(element)
-            } else if isFriend(point: matrix[element]) {
+            } else if isFriend(matrix[element]) {
                 selfMatrix.append(element)
             } else {
                 enemyMatrix.append(element)
@@ -48,7 +48,7 @@ class GridWarsPlayer {
         return [8, current]
     }
 
-    private func isFriend(point: Int) -> Bool {
+    private func isFriend(_ point: Int) -> Bool {
         return point == current
     }
 }

@@ -7,7 +7,7 @@ class GridWarsPlayerTests: XCTestCase {
     let player = GridWarsPlayer()
     XCTAssertEqual(
       player.play(
-        matrix: [
+        [
           0, 0, 0,
           0, 0, 0,
           0, 0, 0,
@@ -17,7 +17,7 @@ class GridWarsPlayerTests: XCTestCase {
 
     XCTAssertEqual(
       player.play(
-        matrix: [
+        [
           0,       0, 0,
           0,       0, 0,
           current, 0, 0,
@@ -27,7 +27,7 @@ class GridWarsPlayerTests: XCTestCase {
 
     XCTAssertEqual(
       player.play(
-        matrix: [
+        [
           0, 0, current,
           0, 0, 0,
           0, 0, 0,
@@ -37,7 +37,7 @@ class GridWarsPlayerTests: XCTestCase {
 
     XCTAssertEqual(
       player.play(
-        matrix: [
+        [
           current, 0, 0,
           0,       0, 0,
           0,       0, 0,
