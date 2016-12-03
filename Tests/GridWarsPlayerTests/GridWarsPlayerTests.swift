@@ -44,6 +44,16 @@ class GridWarsPlayerTests: XCTestCase {
         ]),
         [8, current]
     )
+
+    XCTAssertEqual(
+      player.play(
+        [
+          current, 0, 0,
+          0,       0, 0,
+          0,       0, current,
+        ]),
+        [1, current]
+    )
   }
 }
 
