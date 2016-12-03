@@ -12,7 +12,7 @@ class GridWarsPlayerTests: XCTestCase {
           0, 0, 0,
           0, 0, 0,
         ]),
-        [2, 2, 2, current]
+        [2, current]
     )
 
     XCTAssertEqual(
@@ -22,7 +22,7 @@ class GridWarsPlayerTests: XCTestCase {
           0, 0, 0,
           0, 0, 0,
         ]),
-        [8, 8, 8, current]
+        [8, current]
     )
   }
 }

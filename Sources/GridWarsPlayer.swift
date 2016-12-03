@@ -24,10 +24,10 @@ class GridWarsPlayer {
 
         if enemyMatrix.isEmpty {
             if freeMatrix.count == 8 {
-                return [2, 2, 2, current]
+                return [2, current]
             }
         }
 
-        return [8, 8, 8, current]
+        return [8, current]
     }
 }
