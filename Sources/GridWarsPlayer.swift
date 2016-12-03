@@ -1,5 +1,5 @@
 class GridWarsPlayer {
-    private let current = 1 << 31;
+    private let  scout = 1 << 31 | 1 << 27 | 1 << 23;
 
     private let indexes = [
             0,      1,          2,
@@ -35,24 +35,24 @@ class GridWarsPlayer {
 
         if enemyMatrix.isEmpty {
             if selfMatrix.isEmpty {
-                return [2, current]
+                return [2,  scout]
             }
 
             for (from, to) in diagonalPriorityStep {
                 if selfMatrix.contains(from) && freeMatrix.contains(to) {
-                    return [to, current]
+                    return [to,  scout]
                 }
             }
 
             if let free = freeMatrix.first {
-                return [free, current]
+                return [free,  scout]
             }
         }
 
-        return [8, current]
+        return [8,  scout]
     }
 
     private func isFriend(_ point: Int) -> Bool {
-        return point == current
+        return point ==  scout
     }
 }
