@@ -43,6 +43,10 @@ class GridWarsPlayer {
                     return [to, current]
                 }
             }
+
+            if let free = freeMatrix.first {
+                return [free, current]
+            }
         }
 
         return [8, current]
