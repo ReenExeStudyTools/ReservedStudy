@@ -26,7 +26,7 @@ class GridWarsPlayer {
         for element in indexes {
             if matrix[element] == 0 {
                 freeMatrix.append(element)
-            } else if matrix[element] == current {
+            } else if isFriend(point: matrix[element]) {
                 selfMatrix.append(element)
             } else {
                 enemyMatrix.append(element)
@@ -46,5 +46,9 @@ class GridWarsPlayer {
         }
 
         return [8, current]
+    }
+
+    private func isFriend(point: Int) -> Bool {
+        return point == current
     }
 }
