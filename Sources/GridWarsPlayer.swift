@@ -23,8 +23,25 @@ class GridWarsPlayer {
         }
 
         if enemyMatrix.isEmpty {
-            if freeMatrix.count == 8 {
+            if selfMatrix.isEmpty {
                 return [2, current]
+            }
+
+            let diagonalPriorityStep: [Int: Int] = [
+                6: 2,
+                2: 6,
+                8: 0,
+                0: 8,
+                7: 1,
+                1: 7,
+                5: 3,
+                3: 5,
+            ];
+
+            for (from, to) in diagonalPriorityStep {
+                if selfMatrix.contains(from) && freeMatrix.contains(to) {
+                    return [to, current]
+                }
             }
         }
 
