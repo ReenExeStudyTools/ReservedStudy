@@ -8,9 +8,9 @@ class GridWarsPlayer {
                 6,      7,          8,
         ];
 
-        var freeMatrix:[Int] = [];
-        var selfMatrix:[Int] = [];
-        var enemyMatrix:[Int] = [];
+        var freeMatrix  = [Int]();
+        var selfMatrix  = [Int]();
+        var enemyMatrix = [Int]();
 
         for element in indexes {
             if matrix[element] == 0 {
