@@ -3,7 +3,7 @@ import XCTest
 
 class GridWarsPlayerTests: XCTestCase {
   func testSimple() {
-    let scout = 1 << 31 | 1 << 27 | 1 << 23;
+    let scout = 1 << 31 | 1 << 27 | 1 << 23
     let player = GridWarsPlayer()
     XCTAssertEqual(
       player.play(
@@ -53,6 +53,17 @@ class GridWarsPlayerTests: XCTestCase {
           0,     0,  scout,
         ]),
         [1, scout]
+    )
+
+    let support = scout | 1 << 28
+    XCTAssertEqual(
+      player.play(
+        [
+          scout, scout, scout,
+          scout, scout, scout,
+          scout, scout, scout,
+        ]),
+        [1, support]
     )
   }
 }

@@ -1,11 +1,11 @@
 class GridWarsPlayer {
-    private let  scout = 1 << 31 | 1 << 27 | 1 << 23;
+    private let  scout = 1 << 31 | 1 << 27 | 1 << 23
 
     private let indexes = [
         0,      1,          2,
         3,      /* self */  5,
         6,      7,          8,
-    ];
+    ]
 
     let diagonalPriorityStep: [Int: Int] = [
         6: 2,
@@ -16,12 +16,12 @@ class GridWarsPlayer {
         1: 7,
         5: 3,
         3: 5,
-    ];
+    ]
 
     func play(_ matrix: [Int]) -> Array<Int> {
-        var freeMatrix  = [Int]();
-        var selfMatrix  = [Int]();
-        var enemyMatrix = [Int]();
+        var freeMatrix  = [Int]()
+        var selfMatrix  = [Int]()
+        var enemyMatrix = [Int]()
 
         for element in indexes {
             if matrix[element] == 0 {
