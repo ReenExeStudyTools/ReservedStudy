@@ -18,9 +18,29 @@ class GridWarsPlayerTests: XCTestCase {
     XCTAssertEqual(
       player.play(
         matrix: [
+          0,       0, 0,
+          0,       0, 0,
+          current, 0, 0,
+        ]),
+        [2, current]
+    )
+
+    XCTAssertEqual(
+      player.play(
+        matrix: [
           0, 0, current,
           0, 0, 0,
           0, 0, 0,
+        ]),
+        [6, current]
+    )
+
+    XCTAssertEqual(
+      player.play(
+        matrix: [
+          current, 0, 0,
+          0,       0, 0,
+          0,       0, 0,
         ]),
         [8, current]
     )
