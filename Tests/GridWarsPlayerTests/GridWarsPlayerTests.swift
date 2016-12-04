@@ -116,6 +116,18 @@ class GridWarsPlayerTests: XCTestCase {
       ),
       [0, supportDouble]
     )
+
+    let supportMax = scout | (0b111 << 28)
+    XCTAssertEqual(
+      player.play(
+        [
+          supportMax, supportMax, supportMax,
+          supportMax, supportMax, supportMax,
+          supportMax, supportMax, supportMax,
+        ]
+      ),
+      [0, support]
+    )
   }
 }
 
