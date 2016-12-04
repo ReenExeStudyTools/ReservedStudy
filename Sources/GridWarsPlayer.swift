@@ -62,7 +62,11 @@ class GridWarsPlayer {
         }
       }
 
-      return [result, matrix[result] + 1 << supportShift]
+      if min == band {
+        return [result, matrix[result] ^ band | 1 << supportShift]
+      }
+
+      return [result, matrix[result] + (1 << supportShift)]
     }
 
     return [1, scout]
