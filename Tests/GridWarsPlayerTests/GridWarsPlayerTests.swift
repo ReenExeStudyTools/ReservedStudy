@@ -151,6 +151,39 @@ class GridWarsPlayerTests: XCTestCase {
       ),
       [1, scout]
     )
+
+    XCTAssertEqual(
+      player.play(
+        [
+          scout, scout, enemy,
+          scout, scout, enemy,
+          scout, scout, enemy,
+        ]
+      ),
+      [5, scout]
+    )
+
+    XCTAssertEqual(
+      player.play(
+        [
+          enemy, scout, scout,
+          enemy, scout, scout,
+          enemy, scout, scout,
+        ]
+      ),
+      [3, scout]
+    )
+
+    XCTAssertEqual(
+      player.play(
+        [
+          scout, scout, scout,
+          scout, scout, scout,
+          enemy, enemy, enemy,
+        ]
+      ),
+      [7, scout]
+    )
   }
 }
 
