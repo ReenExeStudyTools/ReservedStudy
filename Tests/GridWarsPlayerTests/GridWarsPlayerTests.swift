@@ -11,8 +11,9 @@ class GridWarsPlayerTests: XCTestCase {
           0, 0, 0,
           0, 0, 0,
           0, 0, 0,
-        ]),
-        [2, scout]
+        ]
+      ),
+      [2, scout]
     )
 
     XCTAssertEqual(
@@ -21,8 +22,9 @@ class GridWarsPlayerTests: XCTestCase {
           0,     0, 0,
           0,     0, 0,
           scout, 0, 0,
-        ]),
-        [2, scout]
+        ]
+      ),
+      [2, scout]
     )
 
     XCTAssertEqual(
@@ -31,8 +33,9 @@ class GridWarsPlayerTests: XCTestCase {
           0, 0, scout,
           0, 0, 0,
           0, 0, 0,
-        ]),
-        [6, scout]
+        ]
+      ),
+      [6, scout]
     )
 
     XCTAssertEqual(
@@ -41,8 +44,9 @@ class GridWarsPlayerTests: XCTestCase {
           scout, 0, 0,
           0,       0, 0,
           0,       0, 0,
-        ]),
-        [8, scout]
+        ]
+      ),
+      [8, scout]
     )
 
     XCTAssertEqual(
@@ -51,8 +55,9 @@ class GridWarsPlayerTests: XCTestCase {
           scout, 0, 0,
           0,     0, 0,
           0,     0,  scout,
-        ]),
-        [1, scout]
+        ]
+      ),
+      [1, scout]
     )
 
     let support = scout | 1 << 28
@@ -62,8 +67,9 @@ class GridWarsPlayerTests: XCTestCase {
           scout, scout, scout,
           scout, scout, scout,
           scout, scout, scout,
-        ]),
-        [0, support]
+        ]
+      ),
+      [0, support]
     )
 
     XCTAssertEqual(
@@ -72,8 +78,9 @@ class GridWarsPlayerTests: XCTestCase {
           support, scout, scout,
           scout,   scout, scout,
           scout,   scout, scout,
-        ]),
-        [1, support]
+        ]
+      ),
+      [1, support]
     )
 
     XCTAssertEqual(
@@ -82,8 +89,9 @@ class GridWarsPlayerTests: XCTestCase {
           support, support, support,
           support, support, support,
           support, support, scout,
-        ]),
-        [8, support]
+        ]
+      ),
+      [8, support]
     )
 
     XCTAssertEqual(
@@ -92,8 +100,9 @@ class GridWarsPlayerTests: XCTestCase {
           support, support, scout,
           support, support, support,
           support, support, support,
-        ]),
-        [2, support]
+        ]
+      ),
+      [2, support]
     )
 
     let supportDouble = support + (1 << 28)
@@ -103,8 +112,9 @@ class GridWarsPlayerTests: XCTestCase {
           support, support, support,
           support, support, support,
           support, support, support,
-        ]),
-        [0, supportDouble]
+        ]
+      ),
+      [0, supportDouble]
     )
   }
 }
