@@ -128,6 +128,18 @@ class GridWarsPlayerTests: XCTestCase {
       ),
       [0, support]
     )
+
+    let enemy = 0b101010
+    XCTAssertEqual(
+      player.play(
+        [
+          enemy,      enemy,      enemy,
+          supportMax, supportMax, supportMax,
+          supportMax, supportMax, supportMax,
+        ]
+      ),
+      [1, scout]
+    )
   }
 }
 
