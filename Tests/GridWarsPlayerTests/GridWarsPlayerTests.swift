@@ -110,9 +110,9 @@ class GridWarsPlayerTests: XCTestCase {
 }
 
 extension GridWarsPlayerTests {
-    static var allTests : [(String, (GridWarsPlayerTests) -> () throws -> Void)] {
-        return [
-             ("testSimple", testSimple)
-        ]
-    }
+  static var allTests : [(String, (GridWarsPlayerTests) -> () throws -> Void)] {
+    return [
+      ("testSimple", testSimple)
+    ]
+  }
 }
