@@ -1,6 +1,8 @@
 class GridWarsPlayer {
     private let scout = 1 << 31 | 1 << 27 | 1 << 23
 
+    private let supportShift = 28
+
     private let indexes = [
         0,      1,          2,
         3,      /* self */  5,
@@ -48,7 +50,7 @@ class GridWarsPlayer {
                 return [free, scout]
             }
 
-            let band = 0b111 << 28
+            let band = 0b111 << supportShift
             var min = band
             var result = 0
 
@@ -60,10 +62,10 @@ class GridWarsPlayer {
                 }
             }
 
-            return [result, matrix[result] + 1 << 28]
+            return [result, matrix[result] + 1 << supportShift]
         }
 
-        return [1, scout | 1 << 28]
+        return [1, scout]
     }
 
     private func isFriend(_ point: Int) -> Bool {

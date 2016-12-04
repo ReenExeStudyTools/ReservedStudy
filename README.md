@@ -1,1 +1,2 @@
-# ReservedStudy
+# GridWars player on Swift
+[![Build Status](https://travis-ci.org/ReenExeStudyTools/SwiftGridWarsPlayerPrototype.svg?branch=master)](https://travis-ci.org/ReenExeStudyTools/SwiftGridWarsPlayerPrototype)
