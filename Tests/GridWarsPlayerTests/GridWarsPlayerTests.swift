@@ -95,6 +95,17 @@ class GridWarsPlayerTests: XCTestCase {
         ]),
         [2, support]
     )
+
+    let supportDouble = support + (1 << 28)
+    XCTAssertEqual(
+      player.play(
+        [
+          support, support, support,
+          support, support, support,
+          support, support, support,
+        ]),
+        [0, supportDouble]
+    )
   }
 }
 

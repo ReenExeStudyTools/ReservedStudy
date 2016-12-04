@@ -60,7 +60,7 @@ class GridWarsPlayer {
                 }
             }
 
-            return [result, scout | 1 << 28]
+            return [result, matrix[result] + 1 << 28]
         }
 
         return [1, scout | 1 << 28]
