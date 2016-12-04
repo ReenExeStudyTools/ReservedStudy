@@ -9,7 +9,7 @@ class GridWarsPlayer {
     6,      7,          8,
   ]
 
-  let diagonalPriorityStep: [Int: Int] = [
+  private let diagonalPriorityStep = [
     6: 2,
     2: 6,
     8: 0,
@@ -18,6 +18,13 @@ class GridWarsPlayer {
     1: 7,
     5: 3,
     3: 5,
+  ]
+
+  private let enemyLineList = [
+    [0, 1, 2],
+    [2, 5, 8],
+    [6, 7, 8],
+    [0, 3, 6],
   ]
 
   func play(_ matrix: [Int]) -> Array<Int> {
@@ -67,6 +74,15 @@ class GridWarsPlayer {
       }
 
       return [result, matrix[result] + (1 << supportShift)]
+    }
+
+    if enemyMatrix.count == 3 {
+      let enemySet = Set(enemyMatrix)
+      for enemyLine in enemyLineList {
+        if (Set(enemyLine).isSubset(of: enemySet)) {
+          return [enemyLine[1], scout]
+        }
+      }
     }
 
     return [1, scout]
