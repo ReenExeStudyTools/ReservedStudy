@@ -92,12 +92,11 @@ class GridWarsPlayer {
             }
         }
 
-        if enemyMatrix.count == 3 {
-            let enemySet = Set(enemyMatrix)
-            for enemyLine in enemyLineList {
-                if (Set(enemyLine).isSubset(of: enemySet)) {
-                    return [enemyLine[1], scout]
-                }
+        let enemySet = Set(enemyMatrix)
+        for enemyLine in enemyLineList {
+            let intersection = Set(enemyLine).intersection(enemySet);
+            if (intersection.count == 3) {
+                return [enemyLine[1], scout]
             }
         }
 
