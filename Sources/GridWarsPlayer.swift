@@ -32,7 +32,7 @@ class GridWarsPlayer {
         [2, 5],
         [8, 7],
         [6, 3],
-    ];
+    ]
 
     func play(_ matrix: [Int]) -> Array<Int> {
         var freeMatrix = [Int]()
@@ -93,14 +93,21 @@ class GridWarsPlayer {
         }
 
         let enemySet = Set(enemyMatrix)
+        var response = enemyMatrix[0]
+        var maxEnemyCount = 0
         for enemyLine in enemyLineList {
-            let intersection = Set(enemyLine).intersection(enemySet);
-            if (intersection.count == 3) {
+            let intersection = Set(enemyLine).intersection(enemySet)
+            if intersection.count == 3 {
                 return [enemyLine[1], scout]
+            }
+
+            if intersection.count > maxEnemyCount {
+                response = enemyLine[1]
+                maxEnemyCount = intersection.count
             }
         }
 
-        return [enemyMatrix[0], scout]
+        return [response, scout]
     }
 
     private func isFriend(_ point: Int) -> Bool {
