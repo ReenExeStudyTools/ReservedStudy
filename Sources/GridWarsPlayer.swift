@@ -27,6 +27,13 @@ class GridWarsPlayer {
         [0, 3, 6],
     ]
 
+    private let oneEnemyFront = [
+        [0, 1],
+        [2, 5],
+        [8, 7],
+        [6, 3],
+    ];
+
     func play(_ matrix: [Int]) -> Array<Int> {
         var freeMatrix = [Int]()
         var friendMatrix = [Int]()
@@ -74,6 +81,15 @@ class GridWarsPlayer {
             }
 
             return [result, matrix[result] + (1 << supportShift)]
+        }
+
+        if enemyMatrix.count == 1 {
+            let enemy = enemyMatrix[0]
+            for enemyLine in oneEnemyFront {
+                if enemyLine.contains(enemy) {
+                    return [enemyLine[1], scout]
+                }
+            }
         }
 
         if enemyMatrix.count == 3 {
