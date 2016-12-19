@@ -5,6 +5,8 @@ class GridWarsPlayerTests: XCTestCase {
     func testSimple() {
         let scout = 1 << 31 | 1 << 27 | 1 << 23
         let player = GridWarsPlayer()
+
+        // Covers all free around
         XCTAssertEqual(
             player.play(
                 [
@@ -60,6 +62,7 @@ class GridWarsPlayerTests: XCTestCase {
             [1, scout]
         )
 
+        // Covers support around
         let support = scout | 1 << 28
         XCTAssertEqual(
             player.play(
@@ -129,6 +132,7 @@ class GridWarsPlayerTests: XCTestCase {
             [0, support]
         )
 
+        // Covers enemy front
         let enemy = 0b101010
         XCTAssertEqual(
             player.play(
@@ -183,6 +187,40 @@ class GridWarsPlayerTests: XCTestCase {
                 ]
             ),
             [7, scout]
+        )
+
+        // Covers one enemy
+        XCTAssertEqual(
+            player.play(
+                [
+                    scout, scout, scout,
+                    enemy, scout, scout,
+                    scout, scout, scout,
+                ]
+            ),
+            [3, scout]
+        )
+
+        XCTAssertEqual(
+            player.play(
+                [
+                    scout, scout, scout,
+                    scout, scout, scout,
+                    enemy, scout, scout,
+                ]
+            ),
+            [3, scout]
+        )
+
+        XCTAssertEqual(
+            player.play(
+                [
+                    scout, scout, enemy,
+                    scout, scout, scout,
+                    scout, scout, scout,
+                ]
+            ),
+            [1, scout]
         )
     }
 }
