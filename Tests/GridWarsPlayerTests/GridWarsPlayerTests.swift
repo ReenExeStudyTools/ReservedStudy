@@ -233,6 +233,51 @@ class GridWarsPlayerTests: XCTestCase {
             ),
             [7, scout]
         )
+
+        // Covers when most
+        XCTAssertEqual(
+            player.play(
+                [
+                    scout, scout, scout,
+                    enemy, scout, scout,
+                    enemy, scout, scout,
+                ]
+            ),
+            [3, scout]
+        )
+
+        XCTAssertEqual(
+            player.play(
+                [
+                    scout, scout, enemy,
+                    enemy, scout, enemy,
+                    enemy, scout, enemy,
+                ]
+            ),
+            [5, scout]
+        )
+
+        XCTAssertEqual(
+            player.play(
+                [
+                    scout, scout, enemy,
+                    enemy, scout, enemy,
+                    enemy, enemy, enemy,
+                ]
+            ),
+            [5, scout]
+        )
+
+        XCTAssertEqual(
+            player.play(
+                [
+                    enemy, scout, enemy,
+                    scout, scout, scout,
+                    enemy, enemy, enemy,
+                ]
+            ),
+            [7, scout]
+        )
     }
 }
 
